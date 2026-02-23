@@ -20,9 +20,10 @@ def bootstrap_mean(x, n_bootstrap=1000, ci=0.95, rng=None):
     
     boot_means = np.array(boot)
   
-    a = 1 - ci
+    a = 1 - ci # Making an alpha
     low = a / 2
     high = (1 - low)
+  
     upper = np.quantile(boot_means, high) # Confidence Intervals of 95%
     lower = np.quantile(boot_means, low) # Confidence Intervals of 5%
 
