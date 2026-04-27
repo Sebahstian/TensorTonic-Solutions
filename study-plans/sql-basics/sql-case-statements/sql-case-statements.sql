@@ -17,5 +17,5 @@ ORDER BY CASE activity_level
     WHEN 'Casual' THEN 2
     WHEN 'Dormant' THEN 3
     ELSE 4
-END, username ASC;
+END ASC, username ASC;
         
