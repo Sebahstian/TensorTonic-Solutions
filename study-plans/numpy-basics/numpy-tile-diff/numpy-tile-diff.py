@@ -7,8 +7,9 @@ def tile_diff(data, reps):
 
     tiled = np.tile(arr, (reps, 1))
 
-    padded = np.pad(tiled, ((0, 1), (0, 0)), mode='edge')
-
-    diffs = np.diff(padded, axis=0)
+    diffs = np.diff(tiled, axis=0)
     
-    return np.stack([tiled, diffs])
+    diff_padded = np.pad(diffs, ((0, 1), (0, 0)))
+
+    
+    return np.stack([tiled, diff_padded])
